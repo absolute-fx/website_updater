@@ -6,7 +6,7 @@
   "scripts": {
     "test": "electron app/main.js",
     "package": "",
-    "build": "electron-packager . --out=dist --asar --overwrite --all && cp icon.icns Test-win32-x64/Test.app/Resources/electron.icns"
+    "build": "electron-packager app/ --out=dist --asar --overwrite --all"
   },
   "author": "AfxLab",
   "license": "ISC",

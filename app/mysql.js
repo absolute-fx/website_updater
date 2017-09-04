@@ -1,4 +1,4 @@
-const mysql = require('app/mysql');
+const mysql = require('mysql');
 
 let MySQL = Object.create({
     host: "localhost",

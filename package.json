@@ -45,6 +45,7 @@
     "start": "electron app/main.js",
     "test": "xo",
     "build": "electron-packager app/ --out=dist --asar --overwrite --all",
+    "build:mac": "electron-packager app/ --out=dist --asar --overwrite --osx",
     "clean": "rm -rf dist",
     "clean:mac": "rm -rf dist/mac",
     "clean:win": "rm -rf dist/win",

@@ -1,18 +1,6 @@
 const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
-const dialog = require('electron').dialog;
-
-function getWebsiteData()
-{
-    dialog.showMessageBox({message: 'Gathering informations from server. Please wait...'});
-}
-
-function contactSupport()
-{
-    //app.remote.
-    //window.location.href = "mailto:info@absolute-fx.com;info@proglab.com"
-}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -22,80 +10,12 @@ function createWindow () {
     // Create the browser window.
     win = new BrowserWindow({width: 1200, height: 800, resizable: false, icon: "icon.ico"})
 
-    const template = [
-        {
-            label: 'Serveur',
-            submenu: [
-                {
-                    label: 'Tester la connexion serveur'
-                },
-                {
-                    label: 'Charger le contenu actuel du site',
-                    click: () => {
-                    getWebsiteData()
-                }
-            }
-        ]
-    },
-    {
-        label: 'Edition',
-            submenu: [
-            {
-                label: 'Annuler',
-                role: 'undo'
-            },
-            {
-                label: 'Refaire',
-                role: 'redo'
-            },
-            {
-                type: 'separator'
-            },
-            {
-                label: 'Couper',
-                role: 'cut'
-            },
-            {
-                label: 'Copier',
-                role: 'copy'
-            },
-            {
-                label: 'Coller',
-                role: 'paste'
-            },
-            {
-                label: 'Supprimer',
-                role: 'delete'
-            },
-            {
-                label: 'Tout sélectionner',
-                role: 'selectall'
-            }
-        ]
-    },
-    {
-        label: 'Quitter',
-        role: 'quit'
-    },
-    {
-        label: '?',
-            submenu: [
-                {
-                    label: "Version 1.0",
-                    enable: false
-                },
-                {
-                    label: "Contacter le support",
-                    click: () => {
-                    contactSupport()
-                }
-            }
-        ]
-    }
-]
+    // Crée le menu
+    const template = require('./menuTemplate')(win)
     const menu = Menu.buildFromTemplate(template)
     Menu.setApplicationMenu(menu)
 
+    // Jquery hack
     win.$ = win.jQuery = require('jquery');
 
     // and load the index.html of the app.
@@ -106,7 +26,7 @@ function createWindow () {
     }))
 
     // Open the DevTools.
-    win.webContents.openDevTools()
+    //win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', () => {

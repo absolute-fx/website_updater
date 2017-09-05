@@ -1,6 +1,6 @@
 {
   "name": "website_updater",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Mise à jour du slideshow du site web Vietamine",
   "main": "main.js",
   "author": "AfxLab",

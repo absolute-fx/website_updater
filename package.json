@@ -1,6 +1,6 @@
 {
   "name": "website_updater",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Mise à jour du slideshow du site web Vietamine",
   "main": "main.js",
   "build": {
@@ -25,7 +25,7 @@
       "target": "dmg"
     },
     "dmg": {
-      "icon": "build/dmg.icns",
+      "icon": "build/icon.icns",
       "contents": [
         {
           "x": 345,
@@ -60,7 +60,8 @@
     "electron-log": "^2.2.7",
     "electron-updater": "^2.8.7",
     "jquery": "^3.2.1",
-    "mysql": "^2.14.1"
+    "mysql": "^2.14.1",
+    "sha1": "^1.1.1"
   },
   "devDependencies": {
     "asar": "^0.13.0",

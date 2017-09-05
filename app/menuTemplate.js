@@ -1,6 +1,5 @@
 const electron = require('electron');
 const pjson = require('./package.json');
-const dialog = require('electron').dialog;
 
 function contactSupport()
 {
